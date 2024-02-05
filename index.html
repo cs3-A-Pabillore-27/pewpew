@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravitational Force Calculator</title>
+</head>
+<body>
+
+  <label for="massA">Mass of Object A (kg): </label>
+  <input type="number" id="massA" required><br>
+
+  <label for="massB">Mass of Object B (kg): </label>
+  <input type="number" id="massB" required><br>
+
+  <label for="distance">Distance between centers (m): </label>
+  <input type="number" id="distance" required><br>
+
+  <button onclick="calculateForce()">Calculate Force</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateForce() {
+      let massA = Number(document.getElementById('massA').value);
+      let massB = Number(document.getElementById('massB').value);
+      let distance = Number(document.getElementById('distance').value);
+      let gravitationalForce = (6.67 * 10 ** -11 * massA * massB) / (distance ** 2);
+      document.getElementById('result').innerHTML = 'Gravitational Force: ' + gravitationalForce.toExponential(2) + ' N';
+    }
+  </script>
+
+</body>
+</html>
